@@ -1,5 +1,5 @@
 {% set name = "gi-docgen" %}
-{% set version = "2022.2" %}
+{% set version = "2023.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gi-docgen-{{ version }}.tar.gz
-  sha256: fc56df0c7d4ab9e5ed83f35b7483cb07d0bf91761e4f139eed363d7e42ffe0c0
+  sha256: 88adeda9cbf882569479701eada009afa5d94fa29d728653ec388c32035f7fa3
 
 build:
   entry_points:
