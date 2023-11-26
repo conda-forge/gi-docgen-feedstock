@@ -1,5 +1,5 @@
 {% set name = "gi-docgen" %}
-{% set version = "2023.1" %}
+{% set version = "2023.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gi-docgen-{{ version }}.tar.gz
-  sha256: 88adeda9cbf882569479701eada009afa5d94fa29d728653ec388c32035f7fa3
+  sha256: 977616bcc0e2735bb596c71e8eb34533526680740c666e87f9dfc323acd488f0
 
 build:
   entry_points:
@@ -25,6 +25,7 @@ requirements:
     - jinja2
     - markdown
     - markupsafe
+    - packaging
     - pygments
     - python >=3.6
     - toml
