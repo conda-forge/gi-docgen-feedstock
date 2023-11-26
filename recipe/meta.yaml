@@ -25,6 +25,7 @@ requirements:
     - jinja2
     - markdown
     - markupsafe
+    - packaging
     - pygments
     - python >=3.6
     - toml
