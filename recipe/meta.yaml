@@ -1,13 +1,13 @@
 {% set name = "gi-docgen" %}
-{% set version = "2023.3" %}
+{% set version = "2024.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gi-docgen-{{ version }}.tar.gz
-  sha256: 977616bcc0e2735bb596c71e8eb34533526680740c666e87f9dfc323acd488f0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2a4a5569f91109777481aa71451751289227f7c2652cfac366184a41eb19c231
 
 build:
   entry_points:
