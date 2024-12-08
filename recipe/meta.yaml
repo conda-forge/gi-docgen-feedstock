@@ -13,7 +13,7 @@ build:
   entry_points:
     - gi-docgen=gidocgen.gidocmain:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
 
 requirements:
@@ -28,7 +28,7 @@ requirements:
     - packaging
     - pygments
     - python >={{ python_min }}
-    - toml
+    - tomli
     - typogrify
 
 test:
