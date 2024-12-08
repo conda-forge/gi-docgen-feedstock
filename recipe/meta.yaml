@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 2a4a5569f91109777481aa71451751289227f7c2652cfac366184a41eb19c231
 
 build:
   entry_points:
     - gi-docgen=gidocgen.gidocmain:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools
   run:
     - jinja2
@@ -27,8 +27,8 @@ requirements:
     - markupsafe
     - packaging
     - pygments
-    - python >=3.6
-    - toml
+    - python >={{ python_min }}
+    - tomli
     - typogrify
 
 test:
@@ -39,6 +39,7 @@ test:
     - gi-docgen --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://gitlab.gnome.org/GNOME/gi-docgen
